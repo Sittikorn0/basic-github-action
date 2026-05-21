@@ -34,3 +34,6 @@ jobs:
         env:
           IMAGE_TAG: dev-${{ github.run_number }}
         run: docker push ${{ secrets.DOCKER_USERNAME }}/testapi:latest
+
+      - name: Deploy on render.com
+        run: curl "https://api.render.com/deploy/srv-d87ba96q1p3s73b0pp50?key=2SKKf05MGbQ"
